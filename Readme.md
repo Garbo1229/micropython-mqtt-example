@@ -14,12 +14,12 @@
 
 ## mqtt主题说明
 - 订阅
-    - `/room` : 人体红外传感器感知移动
-    - `/login` : 连接mqtt服务器时间
-    - `/message` : 接收主题和消息数据
+    - `esp32/room` : 人体红外传感器感知移动
+    - `esp32/login` : 连接mqtt服务器时间
+    - `esp32/message` : 接收主题和消息数据
 - 发布
-    - `/subscribe` : 回复消息动态添加订阅主题
-    - `/debug` : 回复消息用于调试，开启固定格式：参数 `on`; 关闭固定格式：参数 `off`; 例子：`led_switch on`;
+    - `esp32/subscribe` : 回复消息动态添加订阅主题
+    - `esp32/debug` : 回复消息用于调试，开启固定格式：参数 `on`; 关闭固定格式：参数 `off`; 例子：`led_switch on`;
         - `debug_mode` : 开启人体红外
         - `led_switch` : 关闭人体红外
         - `sync_time_show` : 同步nfp倒数时间

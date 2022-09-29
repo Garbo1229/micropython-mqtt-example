@@ -107,7 +107,7 @@ def handle_people(second=0.5):
         date = get_datetime()
 
         mqtt.on_publish(
-            "/room", b'{"code":"1","msg":"moving","data":"","datetime":"%s"}' % (date))
+            "esp32/room", b'{"code":"1","msg":"moving","data":"","datetime":"%s"}' % (date))
 
         print('【' + date + '】' + '[星期' + get_week() + ']', '有人移动(间隔一分钟检测)')
 

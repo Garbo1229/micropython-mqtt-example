@@ -31,11 +31,11 @@ def on_mqtt_connect():
 
     mqttClient.connect()
 
-    on_subscribe('/debug')
+    on_subscribe('esp32/debug')
 
-    on_subscribe('/subscribe')
+    on_subscribe('esp32/subscribe')
 
-    on_publish("/login", bytes('登录时间：%s' %
+    on_publish("esp32/login", bytes('登录时间：%s' %
                                utils.get_datetime(), 'utf-8'))
 
 
@@ -55,22 +55,22 @@ def on_message_come(topic, msg):
 
     print("消息：", msg)
 
-    # on_publish("/message", b"收到主题：%s 消息：%s" % (str(topic, 'utf-8'), str(msg, 'utf-8')))
-    on_publish("/message", bytes("收到主题：%s 消息：%s" %
+    # on_publish("esp32/message", b"收到主题：%s 消息：%s" % (str(topic, 'utf-8'), str(msg, 'utf-8')))
+    on_publish("esp32/message", bytes("收到主题：%s 消息：%s" %
                (str(topic, 'utf-8'), str(msg, 'utf-8')), 'uft-8'))
 
-    if topic == b'/debug':
+    if topic == b'esp32/debug':
         handle_switch(msg, topic)
     # 添加主题
-    if topic == b'/subscribe':
+    if topic == b'esp32/subscribe':
 
         print("\n订阅：", str(msg, 'utf-8'))
 
         on_subscribe(str(msg, 'utf-8'))
 
 
-def handle_switch(msg, topic=b"/debug"):
-    if topic == b"/debug":
+def handle_switch(msg, topic=b"esp32/debug"):
+    if topic == b"esp32/debug":
         # 先分析是状态
         if msg[-2:] == b'on':
             switch_value = 1
