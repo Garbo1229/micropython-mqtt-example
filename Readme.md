@@ -1,7 +1,7 @@
 # micropython-mqtt-example
 
 ## 环境准备
-参考：[MicroPthon环境搭建笔记（ESP8266例子和坑）](https://garbo.me/2022/08/29/MicroPython%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0%EF%BC%88ESP8266%E4%BE%8B%E5%AD%90%E5%92%8C%E5%9D%91%EF%BC%89/)
+参考：[MicroPthon环境搭建笔记（ESP8266例子和坑）](https://garbo.me/micropthon/MicroPython%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E7%AC%94%E8%AE%B0/)
 
 ## 实现功能
 通过`ESP32/ESP8266`连接`hc501`传感器,将结果传至`mqtt`服务器达到监控作用
